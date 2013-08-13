@@ -20,12 +20,13 @@
         <li>
             <%--Retrieve the parent page--%>
             <c:set var="parentPage" value="${jcr:getParentOfType(currentNode, 'jnt:page')}"/>
-            <c:set var="parentPageUrl" value="${url.server}${url.live}/${parentPage.path}.html"/>
+            <c:url var="parentPageUrl" value="${parentPage.url}"/>
+            <c:set var="parentPageFullUrl" value="${url.server}${parentPageUrl}"/>
             <c:set var="parentPageTitle" value="${parentPage.properties['jcr:title'].string}"/>
 
             <%--Generate the share url with the parent page link--%>
             <fmt:message key="${socialNetwork.string}.url.share" var="shareUrl"/>
-            <c:set var="shareUrl" value="${fn:replace(shareUrl,'[url]',parentPageUrl)}"/>
+            <c:set var="shareUrl" value="${fn:replace(shareUrl,'[url]',parentPageFullUrl)}"/>
             <c:set var="shareUrl" value="${fn:replace(shareUrl,'[title]',parentPageTitle)}"/>
             <c:url var="shareUrl" value="${shareUrl}" />
             ${currentNode.properties['jcr:title'].string}<a href="${shareUrl}"><img src="<c:url value='${url.currentModule}/images/${socialNetwork.string}_32.png'/>" alt="${socialNetwork.string}" /></a>
