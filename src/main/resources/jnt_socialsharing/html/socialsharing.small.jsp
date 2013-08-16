@@ -23,7 +23,7 @@
         <li>
             <%--Retrieve the parent page--%>
             <c:set var="parentPage" value="${jcr:getParentOfType(currentNode, 'jnt:page')}"/>
-            <c:url var="parentPageUrl" value="${parentPage.url}"/>
+            <c:url var="parentPageUrl" value="${url.baseLive}${parentPage.path}.html"/>
             <c:set var="parentPageFullUrl" value="${url.server}${parentPageUrl}"/>
             <c:set var="parentPageTitle" value="${parentPage.properties['jcr:title'].string}"/>
 
