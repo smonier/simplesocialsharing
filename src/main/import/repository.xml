@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <socialsharing j:dependencies="default"
+        <simplesocialsharing j:dependencies="default"
                      j:modulePriority="0"
                      j:moduleType="module"
-                     j:title="Jahia Social Sharing"
+                     j:title="Simple Social Sharing"
                      jcr:primaryType="jnt:module">
                 
                 <portlets jcr:primaryType="jnt:portletFolder"/>
@@ -15,6 +15,6 @@
                     <contents jcr:primaryType="jnt:contentFolder"/>
                 </templates>
                 
-            </socialsharing>
+            </simplesocialsharing>
     </modules>
 </content>

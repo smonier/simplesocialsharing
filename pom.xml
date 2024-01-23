@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+ <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
     ==========================================================================================
@@ -51,19 +51,19 @@
     <artifactId>jahia-modules</artifactId>
     <version>8.0.0.0</version>
   </parent>
-  <artifactId>socialsharing</artifactId>
-  <version>3.1.0-SNAPSHOT</version>
+  <groupId>org.jahia.se.modules</groupId>
+  <artifactId>simplesocialsharing</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
-  <name>Jahia Social Sharing</name>
-  <description>These are the custom module (Jahia Social Sharing) for running on a Jahia server.</description>
+  <name>Simple Social Sharing</name>
+  <description>These are the custom module (Simple Social Sharing) for running on a Jahia server.</description>
   <scm>
-    <connection>scm:git:git@github.com:Jahia/socialsharing.git</connection>
-    <developerConnection>scm:git:git@github.com:Jahia/socialsharing.git</developerConnection>
-    <url>scm:git:git@github.com:Jahia/socialsharing.git</url>
+    <connection>scm:git:git@github.com:smonier/simplesocialsharing.git</connection>
+    <developerConnection>scm:git:git@github.com:smonier/simplesocialsharing.git</developerConnection>
+    <url>scm:git:git@github.com:smonier/simplesocialsharing.git</url>
     <tag>HEAD</tag>
   </scm>
   <properties>
-    <jahia-module-signature>MCwCFAqUYFaXvyRLXlVwK1oW+Xf7niAKAhQ+NBFyeYrQRl9PU3Cu36XfG55Msg==</jahia-module-signature>
     <require-capability>osgi.extender;filter:="(osgi.extender=org.jahia.bundles.blueprint.extender.config)"</require-capability>
   </properties>
   <repositories>
@@ -80,4 +80,20 @@
       <url>https://devtools.jahia.com/nexus/content/groups/public</url>
     </repository>
   </repositories>
+  <build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>maven-bundle-plugin</artifactId>
+      <extensions>true</extensions>
+      <configuration>
+        <instructions>
+          <Jahia-Module-Priority>1</Jahia-Module-Priority>
+          <_dsannotations>*</_dsannotations>
+          <Jahia-Static-Resources>/css,/fonts,/javascript,/images,/icons,/img</Jahia-Static-Resources>
+        </instructions>
+      </configuration>
+    </plugin>
+  </plugins>
+  </build>
 </project>

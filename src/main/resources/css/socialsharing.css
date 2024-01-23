@@ -1,20 +1,61 @@
- .socialsharing
-{
-    list-style-type :none;
-}
- .socialsharing li
-{
-     display:inline;
-     margin:5px;
+.content-center{
+    height:10vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
- .socialsharing-small
-{
-    list-style-type :none;
-	margin:1em;
+ul.social{
+    display:flex;
+    list-style:none;
 }
- .socialsharing-small li
-{
-     display:inline;
-     margin:2px;
+
+
+@media (max-width:700px) {
+    ul.social {
+        display: block
+    }
+}
+
+ul.social li{
+    margin:10px;
+    height:60px;
+    width:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    cursor:pointer;
+    position:relative;
+    border:2px solid var(--primary);
+    color:var(--primary);
+}
+
+ul.social li i{
+    transition:all 0.3s linear;
+}
+
+
+ul.social li:hover i{
+    color:#fff;
+    font-size:17px;
+}
+
+ul.social li:hover::after{
+    opacity:1;
+    transform:scale(0.8);
+
+}
+
+ul.social li::after{
+    content:"";
+    position:absolute;
+    height:inherit;
+    width:inherit;
+    border-radius:50%;
+    opacity:0;
+    z-index:-1;
+    transition:all 0.3s linear;
+    background-color:var(--primary);
+    color:var(--primary);
 }
